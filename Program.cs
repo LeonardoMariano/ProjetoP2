@@ -1,4 +1,6 @@
 ﻿using System;
+using ProjetoP2.Adapter;
+using ProjetoP2.Facade;
 
 namespace ProjetoP2
 {
@@ -6,7 +8,8 @@ namespace ProjetoP2
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            ComputadorFacade computer = new ComputadorFacade();
+            computer.formatComputer();
         }
     }
 }
