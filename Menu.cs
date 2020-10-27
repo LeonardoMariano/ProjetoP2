@@ -23,20 +23,18 @@ namespace ProjetoP2
                 Console.Clear();
 
                 Console.WriteLine("Menu");
-                Console.WriteLine("");
-                Console.WriteLine("");
+                nextLine(2);
                 Console.WriteLine("Choose the design pattern");
-                Console.WriteLine("");
+                nextLine();
                 Console.WriteLine("1 - Adapter");
                 Console.WriteLine("2 - Command");
                 Console.WriteLine("3 - Facade");
                 Console.WriteLine("4 - Singleton");
                 Console.WriteLine("5 - Strategy");
                 Console.WriteLine("6 - Template Method");
-                Console.WriteLine("");
+                nextLine();
                 Console.WriteLine("0 - Exit");
-                Console.WriteLine("");
-                Console.WriteLine("");
+                nextLine(2);
                 Console.Write("Option: ");
 
                 option = int.Parse(Console.ReadLine());
@@ -90,23 +88,52 @@ namespace ProjetoP2
 
         public static void adapter()
         {
+            string fileSystem;
+            Console.WriteLine("Setting up new computer");
             Computer computerAdapter = new Computer();
-            computerAdapter.setFileSystem("NTFS");
+            nextLine();
 
+            Console.Write("Choose the computer file system: ");
+            fileSystem = Console.ReadLine();
+            computerAdapter.setFileSystem(fileSystem);
+            nextLine(2);
+
+            dotedLine(70);
+            
+            Console.WriteLine("Setting up new Windows System with NTFS...");
             WindowsSystem windows = new WindowsSystem();
             windows.setFileSystem("NTFS");
+            nextLine(2);
 
+            Console.WriteLine("Setting up new Windows System with NegrettosFileSystem...");
             WindowsSystem windows2 = new WindowsSystem();
-            windows.setFileSystem("NegrettosFileSystem");
+            windows2.setFileSystem("NegrettosFileSystem");
+            nextLine(2);
 
+            Console.WriteLine("Setting up new Linux System with EXT4...");
             LinuxSystem linux = new LinuxSystem();
             linux.setFileSystem("EXT4");
+            nextLine(2);
 
+            Console.ReadKey();
+            dotedLine(70);            
+
+            Console.WriteLine("Checking if the computer is compatible with Windows NTFS...");
             Console.WriteLine(computerAdapter.compatible(windows));
+            nextLine(2);
+
+            Console.WriteLine("Checking if the computer is compatible with Windows NegrettosFileSystem...");
             Console.WriteLine(computerAdapter.compatible(windows2));
+            nextLine(2);
 
+            Console.ReadKey();
+            dotedLine(70);
+
+            Console.WriteLine("Setting up new Linux adapter from EXT4 to NTFS...");
             LinuxSystemAdapter adapter = new LinuxSystemAdapter(linux);
+            nextLine(2);
 
+            Console.WriteLine("Checking if the computer is compatible with Linux Adapter...");
             Console.WriteLine(computerAdapter.compatible(adapter));
 
             Console.ReadKey();
@@ -173,7 +200,7 @@ namespace ProjetoP2
         }
 
         public static void animation()
-        {            
+        {
             Thread.Sleep(333);
             Console.Write(".");
             Thread.Sleep(333);
@@ -182,6 +209,27 @@ namespace ProjetoP2
             Console.Write(".");
             Thread.Sleep(333);
             Console.Clear();
+        }
+
+        public static void nextLine()
+        {
+            Console.WriteLine("");
+        }
+
+        public static void nextLine(int spaces)
+        {
+            for (int i = 1; i <= spaces; i++)
+            {
+                Console.WriteLine("");
+            }
+        }
+        public static void dotedLine(int spaces)
+        {
+            for (int i = 1; i <= spaces; i++)
+            {
+                Console.Write("-");
+            }
+            nextLine(2);
         }
     }
 }
