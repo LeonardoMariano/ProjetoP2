@@ -2,6 +2,8 @@
 using ProjetoP2.Adapter;
 using ProjetoP2.Facade;
 using ProjetoP2.Singleton;
+using ProjetoP2.Command;
+using ProjetoP2.Strategy;
 
 namespace ProjetoP2
 {
@@ -44,7 +46,7 @@ namespace ProjetoP2
             Database connection2 = Database.getConnection();
 
             Console.ReadKey();
-
+            
             //STRATEGY ---------------------------------------------
             Client client = new Client("Negretto", "123456789");
 
@@ -57,6 +59,16 @@ namespace ProjetoP2
                 Console.WriteLine("Value: " + client.CalculateValue(value));
                 Console.WriteLine("");
             }
+
+            Console.ReadKey();
+
+            //COMMAND ----------------------------------------------
+            Invoker invoker = new Invoker();
+            invoker.SetOnStart(new GenerateReceiptCommand("154268"));
+            Receiver receiver = new Receiver();
+            invoker.SetOnFinish(new SendEMailCommand(receiver, "m.loliveira@alunos.fho.edu.br"));
+
+            invoker.DoSomethingImportant();
 
             Console.ReadKey();
         }
