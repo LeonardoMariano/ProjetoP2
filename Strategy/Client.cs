@@ -13,20 +13,21 @@ namespace ProjetoP2
 
         private ICartridgeStrategy CartridgeStrategy;
 
-        public Client(string nome, string cpf)
+        public Client(string name, string cpf)
         {
-            this.name = nome;
+            this.name = name;
             this.cpf = cpf;
             this.totalCartridgeRefill = 0;
         }
 
-        public void AtualizarTotalRecargas()
-        {
-            Console.WriteLine("Total refills: " + this.totalCartridgeRefill);
+        public void UpdateTotalRefills()
+        {            
             this.totalCartridgeRefill++;
-            if (totalCartridgeRefill > 5)
+            Console.WriteLine("Total refills: " + this.totalCartridgeRefill);
+            if (totalCartridgeRefill >= 5)
             {
                 this.CartridgeStrategy = new BonusCartridgeRefill();
+                Console.WriteLine("This refill is free! Enjoy!");
                 totalCartridgeRefill = 0;
             }
             else
@@ -34,5 +35,10 @@ namespace ProjetoP2
                 this.CartridgeStrategy = new StandardCartridgeRefill();
             }
         }
+
+        public double CalculateValue(double value)
+        {
+            return this.CartridgeStrategy.Calculate(value);
+        }  
     }
 }
