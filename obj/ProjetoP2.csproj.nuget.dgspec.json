@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\leona\\OneDrive\\Área de Trabalho\\ProjetoP2\\ProjetoP2.csproj": {}
+    "C:\\Users\\Matheus Oliveira\\ProjetoP2\\ProjetoP2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\leona\\OneDrive\\Área de Trabalho\\ProjetoP2\\ProjetoP2.csproj": {
+    "C:\\Users\\Matheus Oliveira\\ProjetoP2\\ProjetoP2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\leona\\OneDrive\\Área de Trabalho\\ProjetoP2\\ProjetoP2.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus Oliveira\\ProjetoP2\\ProjetoP2.csproj",
         "projectName": "ProjetoP2",
-        "projectPath": "C:\\Users\\leona\\OneDrive\\Área de Trabalho\\ProjetoP2\\ProjetoP2.csproj",
-        "packagesPath": "C:\\Users\\leona\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\leona\\OneDrive\\Área de Trabalho\\ProjetoP2\\obj\\",
+        "projectPath": "C:\\Users\\Matheus Oliveira\\ProjetoP2\\ProjetoP2.csproj",
+        "packagesPath": "C:\\Users\\Matheus Oliveira\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus Oliveira\\ProjetoP2\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\leona\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Matheus Oliveira\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.302\\RuntimeIdentifierGraph.json"
         }
       }
     }

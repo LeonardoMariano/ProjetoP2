@@ -2,6 +2,7 @@
 using ProjetoP2.Adapter;
 using ProjetoP2.Facade;
 using ProjetoP2.Singleton;
+using ProjetoP2.Command;
 
 namespace ProjetoP2
 {
@@ -20,7 +21,15 @@ namespace ProjetoP2
 
             //FACADE -----------------------------------------------
             ComputerFacade computer = new ComputerFacade();
-            computer.formatComputer();            
+            computer.formatComputer();
+
+            //COMMAND ----------------------------------------------
+            Invoker invoker = new Invoker();
+            invoker.SetOnStart(new GenerateReceiptCommand("154268"));
+            Receiver receiver = new Receiver();
+            invoker.SetOnFinish(new SendEMailCommand(receiver, "m.loliveira@alunos.fho.edu.br"));
+
+            invoker.DoSomethingImportant();
         }
     }
 }
