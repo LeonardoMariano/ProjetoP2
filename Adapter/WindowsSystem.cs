@@ -93,7 +93,7 @@ namespace ProjetoP2.Adapter
             }
             Console.WriteLine("");
             Console.WriteLine("");
-            Console.WriteLine("Press any key to continue...");
+            Console.Write("Press any key to continue...");
             Console.ReadKey();
             Console.Clear();
         }

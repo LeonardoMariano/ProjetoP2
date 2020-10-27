@@ -15,8 +15,7 @@ namespace ProjetoP2.Facade
         }
 
         public void formatComputer()
-        {
-            Console.WriteLine("Starting format process");
+        {            
             windows.startBios();
             windows.bootDiskSetup();
             windows.restart();

@@ -9,6 +9,7 @@ namespace ProjetoP2.Command
         public void sendEMail(string email)
         {
             Console.WriteLine($"Receiver: Sending receipt to {email}");
+            
         }
     }
 }

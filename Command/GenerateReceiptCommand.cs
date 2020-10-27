@@ -6,17 +6,17 @@ namespace ProjetoP2.Command
 {
     class GenerateReceiptCommand : ICommand
     {
-            private string numero = string.Empty;
+        private string numero = string.Empty;
 
-            public GenerateReceiptCommand(string numero)
-            {
-                this.numero = numero;
-            }
+        public GenerateReceiptCommand(string numero)
+        {
+            this.numero = numero;
+        }
 
-            public void Execute()
-            {
-                Console.WriteLine($"Generating receipt number {this.numero}");
-            }
-
+        public void Execute()
+        {
+            Console.WriteLine($"Generating receipt number {this.numero}");
+            Console.ReadKey();
+        }
     }
 }

@@ -17,6 +17,8 @@ namespace ProjetoP2.TemplateMethod
         protected void removeTop()
         {
             Console.WriteLine("Removing the plastic on top of the cartridge");
+            Console.ReadKey();
+            Console.WriteLine("");
         }
 
         protected abstract void fillSyringe();
@@ -26,6 +28,8 @@ namespace ProjetoP2.TemplateMethod
          protected void clean()
         {
             Console.WriteLine("Cleanning the remaining paint");
+            Console.ReadKey();
+            Console.WriteLine("");
         }
     }
 }

@@ -16,25 +16,30 @@ namespace ProjetoP2
         public static void startMenu()
         {
             int option = 0;
-            bool exit = true;
+            bool stay = true;
 
-            while (exit)
+            while (stay)
             {
                 Console.Clear();
 
-                Console.WriteLine("Menu");
+                Console.WriteLine("==================================================");
+                Console.WriteLine("====                   Menu                   ====");
+                Console.WriteLine("==================================================");
                 nextLine(2);
+                Console.WriteLine("==================================================");
                 Console.WriteLine("Choose the design pattern");
                 nextLine();
-                Console.WriteLine("1 - Adapter");
-                Console.WriteLine("2 - Command");
-                Console.WriteLine("3 - Facade");
-                Console.WriteLine("4 - Singleton");
-                Console.WriteLine("5 - Strategy");
-                Console.WriteLine("6 - Template Method");
+                Console.WriteLine("1 - Computer File System (Adapter)");
+                Console.WriteLine("2 - Generate Receipt and send Email (Command)");
+                Console.WriteLine("3 - Format Computer (Facade)");
+                Console.WriteLine("4 - Create Database Instance (Singleton)");
+                Console.WriteLine("5 - Calculate Cartridge Refill (Strategy)");
+                Console.WriteLine("6 - Make a Cartridge Refill (Template Method)");
                 nextLine();
                 Console.WriteLine("0 - Exit");
+                Console.WriteLine("==================================================");
                 nextLine(2);
+
                 Console.Write("Option: ");
 
                 option = int.Parse(Console.ReadLine());
@@ -76,7 +81,7 @@ namespace ProjetoP2
                     case 0:
                         Console.Write("Exiting");
                         animation();
-                        exit = false;
+                        stay = false;
                         break;
                     default:
                         Console.Write("Please select a valid value");
@@ -153,17 +158,25 @@ namespace ProjetoP2
 
         public static void facade()
         {
+            Console.WriteLine("Starting computer formatting process");
+            Console.ReadKey();
+            Console.Clear();
+
             ComputerFacade computerFacade = new ComputerFacade();
             computerFacade.formatComputer();
         }
 
         public static void singleton()
         {
-            Console.WriteLine("Creating database connection #1");
+            Console.WriteLine("Creating first database connection");
+            nextLine();
             Database connection1 = Database.getConnection();
             Console.ReadKey();
+            nextLine(2);
+            dotedLine(70);
 
-            Console.WriteLine("Creating database connection #2");
+            Console.WriteLine("Creating second database connection");
+            nextLine();
             Database connection2 = Database.getConnection();
 
             Console.ReadKey();
@@ -171,32 +184,38 @@ namespace ProjetoP2
 
         public static void strategy()
         {
-            Client client = new Client("Negretto", "123456789");
+            Client client = new Client("Diego Negretto", "123456789");
 
             double value = 20.00;
 
             for (int i = 1; i <= 10; i++)
             {
+                Console.WriteLine("Client: " + client.name + " CPF: " + client.cpf);
                 Console.WriteLine(i + "º refill");
                 client.UpdateTotalRefills();
                 Console.WriteLine("Value: " + client.CalculateValue(value));
-                Console.WriteLine("");
-            }
+                Console.ReadKey();
 
+                nextLine(2);
+                dotedLine(70);
+            }
             Console.ReadKey();
         }
 
         public static void template()
         {
             Console.WriteLine("Starting black cartridge refill");
+            Console.ReadKey();
+            nextLine();
             Attendant.Refill(new ConcreteBlackRefill());
-            Console.WriteLine("");
+            nextLine();
+            dotedLine(70);
 
             Console.WriteLine("Starting colored cartridge refill");
-            Attendant.Refill(new ConcreteColoredRefill());
-            Console.WriteLine("");
-
             Console.ReadKey();
+            nextLine();
+            Attendant.Refill(new ConcreteColoredRefill());
+            nextLine();            
         }
 
         public static void animation()
