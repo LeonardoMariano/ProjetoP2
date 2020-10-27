@@ -5,24 +5,24 @@ using System.Threading;
 
 namespace ProjetoP2.Adapter
 {
-    public class SistemaWindows
-    {    
+    public class WindowsSystem
+    {
         //ADAPTER ----------------------------------------
-        private string sistemaDeArquivos;
+        private string fileSystem;
 
-        public SistemaWindows()
+        public WindowsSystem()
         {
-            this.sistemaDeArquivos = "NTFS";
+            this.fileSystem = "NTFS";
         }
 
-        public void setSistemaDeArquivos(string sisArq)
+        public void setFileSystem(string fs)
         {
-            this.sistemaDeArquivos = sisArq;
+            this.fileSystem = fs;
         }
 
-        public virtual string getSistemaDeArquivos()
+        public virtual string getFileSystem()
         {
-            return this.sistemaDeArquivos;
+            return this.fileSystem;
         }
 
 
@@ -60,7 +60,7 @@ namespace ProjetoP2.Adapter
         public void installWindows()
         {
             Console.WriteLine("Requesting activation key...");
-            Console.WriteLine("Requesting SO version...");           
+            Console.WriteLine("Requesting SO version...");
             animation();
         }
 
@@ -87,10 +87,10 @@ namespace ProjetoP2.Adapter
             for (int i = 0; i < 5; i++)
             {
                 Console.Write("====");
-                Thread.Sleep(100);                
+                Thread.Sleep(100);
                 Console.Write("==");
-                Thread.Sleep(150);                
-            }            
+                Thread.Sleep(150);
+            }
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("Press any key to continue...");

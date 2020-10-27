@@ -4,8 +4,8 @@ using System.Text;
 
 namespace ProjetoP2.Strategy
 {
-    interface ICartuchoStrategy
+    interface ICartridgeStrategy
     {
-        double Calcular(double valorDaCompra);
+        double Calculate(double purchaseValue);
     }
 }

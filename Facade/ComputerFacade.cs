@@ -1,17 +1,17 @@
-﻿using ProjetoP2.Adapter;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ProjetoP2.Adapter;
 
 namespace ProjetoP2.Facade
 {
-    public class ComputadorFacade
+    public class ComputerFacade
     {
-        private SistemaWindows windows = null;
-        
-        public ComputadorFacade()
+        private WindowsSystem windows = null;
+
+        public ComputerFacade()
         {
-            this.windows = new SistemaWindows();
+            this.windows = new WindowsSystem();
         }
 
         public void formatComputer()
@@ -25,6 +25,5 @@ namespace ProjetoP2.Facade
             windows.setupUserPreferences();
             windows.finishInstallation();
         }
-
     }
 }

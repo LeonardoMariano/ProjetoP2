@@ -19,7 +19,7 @@ namespace ProjetoP2
             Console.ReadKey();
 
             //FACADE -----------------------------------------------
-            ComputadorFacade computer = new ComputadorFacade();
+            ComputerFacade computer = new ComputerFacade();
             computer.formatComputer();            
         }
     }
