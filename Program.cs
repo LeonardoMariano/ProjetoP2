@@ -4,13 +4,14 @@ using ProjetoP2.Facade;
 using ProjetoP2.Singleton;
 using ProjetoP2.Command;
 using ProjetoP2.Strategy;
+using ProjetoP2.TemplateMethod;
 
 namespace ProjetoP2
 {
     class Program
     {
         static void Main(string[] args)
-        {               
+        {
             //ADAPTER ----------------------------------------------
             Computer computerAdapter = new Computer();
             computerAdapter.setFileSystem("NTFS");
@@ -36,7 +37,7 @@ namespace ProjetoP2
             //FACADE -----------------------------------------------
             ComputerFacade computerFacade = new ComputerFacade();
             computerFacade.formatComputer();
-            
+
             //SINGLETON --------------------------------------------
             Console.WriteLine("Creating database connection #1");
             Database connection1 = Database.getConnection();
@@ -46,7 +47,7 @@ namespace ProjetoP2
             Database connection2 = Database.getConnection();
 
             Console.ReadKey();
-            
+
             //STRATEGY ---------------------------------------------
             Client client = new Client("Negretto", "123456789");
 
@@ -69,6 +70,17 @@ namespace ProjetoP2
             invoker.SetOnFinish(new SendEMailCommand(receiver, "m.loliveira@alunos.fho.edu.br"));
 
             invoker.DoSomethingImportant();
+
+            Console.ReadKey();
+
+            //TEMPLATE METHOD --------------------------------------
+            Console.WriteLine("Starting black cartridge refill");
+            Attendant.Refill(new ConcreteBlackRefill());
+            Console.WriteLine("");
+
+            Console.WriteLine("Starting colored cartridge refill");
+            Attendant.Refill(new ConcreteColoredRefill());
+            Console.WriteLine("");
 
             Console.ReadKey();
         }
