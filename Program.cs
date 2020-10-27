@@ -11,7 +11,9 @@ namespace ProjetoP2
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
+            Menu.startMenu();
+
             //ADAPTER ----------------------------------------------
             Computer computerAdapter = new Computer();
             computerAdapter.setFileSystem("NTFS");
